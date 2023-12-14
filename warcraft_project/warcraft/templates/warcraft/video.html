@@ -1,0 +1,12 @@
+{% extends 'warcraft/base.html' %}
+
+{% block content %}
+  <h1>Video Page</h1>
+  {% for video in video_list %}
+    <p>{{ video.title }}</p>
+    <video controls style="width: 500px; height: 800px;">
+      <source src="{{ MEDIA_URL }}video/{{ video.video }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  {% endfor %}
+{% endblock content %}
